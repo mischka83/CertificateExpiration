@@ -1,0 +1,22 @@
+﻿
+# ignore the settings folder and files for VSCode and PSS
+.vscode/*
+*.psproj
+*TempPoint*
+
+# Ignore staging info from Visual Studio
+library/CertificateExpiration/.vs/*
+library/CertificateExpiration/CertificateExpiration/bin/*
+library/CertificateExpiration/CertificateExpiration/obj/*
+
+# ignore PowerShell Studio MetaData
+CertificateExpiration/CertificateExpiration.psproj
+CertificateExpiration/CertificateExpiration.psproj.bak
+CertificateExpiration/CertificateExpiration.psprojs
+CertificateExpiration/CertificateExpiration.psproj
+
+# ignore the TestResults
+TestResults/*
+
+# ignore the publishing Directory
+publish/*
