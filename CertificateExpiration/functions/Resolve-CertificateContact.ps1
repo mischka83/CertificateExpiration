@@ -1,4 +1,5 @@
-function Resolve-CertificateContact {
+﻿function Resolve-CertificateContact {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingEmptyCatchBlock', '')]
     [CmdletBinding()]
     param (
         [Parameter(ValueFromPipeline=$true)]

@@ -1,4 +1,22 @@
-function Get-ExpiringCertificate {
+﻿function Get-ExpiringCertificate {
+    <#
+    .SYNOPSIS
+        Returns the expiring certificates from a list of certificate objects
+
+    .DESCRIPTION
+        Returns the expiring certificates from a list of certificate objects
+
+    .PARAMETER Certificate
+        a list with one or more certificate objects
+
+    .PARAMETER ExpireDays
+        Defines the scope of the search in days in which the next certificates expire
+
+    .EXAMPLE
+        PS C:\$expiringCertificates = $allCertificates | Get-ExpiringCertificate -ExpireDays 90
+
+        returns the expiring certificates of the next 90 days from a list of certificate objects
+#>
     [CmdletBinding()]
     param (
         [Parameter(ValueFromPipeline = $true)]

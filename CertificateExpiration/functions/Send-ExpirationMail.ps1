@@ -1,4 +1,4 @@
-function Send-ExpirationMail {
+﻿function Send-ExpirationMail {
     [CmdletBinding()]
     param (
         $Certificates,
@@ -99,19 +99,19 @@ $($CertificateTemplates | Format-String "       <li>{0}</li>" | Join-String "`n"
     </html>
 "@
     $tableHTML = $Certificates |
-        Select-PSFObject IssuedRequestID,"Certificate.SerialNumber As SN",RequesterName,"Certificate.Subject As Subject",TemplateDisplayName,"CertificateExpirationDate" |
-        ConvertTo-Html -Fragment |
-        Split-String "`n" |
-        Select-Object -Skip 3 |
-        Format-String "        {0}"
+    Select-PSFObject IssuedRequestID, "Certificate.SerialNumber As SN", RequesterName, "Certificate.Subject As Subject", TemplateDisplayName, "CertificateExpirationDate" |
+    ConvertTo-Html -Fragment |
+    Split-String "`n" |
+    Select-Object -Skip 3 |
+    Format-String "        {0}"
 
     $mailbody = $mailbody | Set-String -OldValue %CertificateList% -NewValue ($tableHTML -join "`n") -DoNotUseRegex
     #endregion mailbody
 
-    if($Contact) { $Recipient = @($Certificates)[0].Contact }
+    if ($Contact) { $Recipient = @($Certificates)[0].Contact }
 
     Set-MDMail -To $Recipient -Subject "Certificate Expiration Warning" -Body $mailbody -BodyAsHtml
-
+    if ($SenderAddress) { Set-MDMail -From $SenderAddress }
     Send-MDMail -TaskName CertficateExpirationReport
 
 }

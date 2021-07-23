@@ -1,4 +1,25 @@
-function Export-CertificateReport {
+﻿function Export-CertificateReport {
+    <#
+    .SYNOPSIS
+        Exports a list as csv and xml file with the expiring certificates and exports the associated public certificates as cer file.
+
+    .DESCRIPTION
+        Exports a list as csv and xml file with the expiring certificates and exports the associated public certificates as cer file.
+
+    .PARAMETER ExpiringCertificates
+        A list containing all certificates to be examined
+
+    .PARAMETER Path
+        Specifies the path to export
+
+    .EXAMPLE
+        PS C:\> $expiringCertificates | Export-CertificateReport -Path C:\Temp
+
+        Exports the following files to "C:\Temp"
+            "expiring_certificates_<date>.csv"
+            "expiring_certificates_<date>.xml"
+            "<thumbprint.cer"
+#>
     [CmdletBinding()]
     param (
         [Parameter(ValueFromPipeline = $true)]
@@ -8,7 +29,7 @@ function Export-CertificateReport {
         $Path
     )
 
-    begin{
+    begin {
         $selectProperties = @(
             "IssuedRequestID"
             "Certificate.SerialNumber As SN"
@@ -25,16 +46,16 @@ function Export-CertificateReport {
         $csvPath = Join-Path -Path $exportFolder -ChildPath "expiring_certificates_$(Get-Date -Format yyyy-MM-dd).csv"
         $xmlPath = Join-Path -Path $exportFolder -ChildPath "expiring_certificates_$(Get-Date -Format yyyy-MM-dd).xml"
     }
-    process{
+    process {
         $ExpiringCertificates | Select-PSFObject $selectProperties | Export-Csv -Path $csvPath -Append
-        foreach($certificate in $ExpiringCertificates) {
+        foreach ($certificate in $ExpiringCertificates) {
             $cerPath = Join-Path -Path $exportFolder -ChildPath "$($certificate.certificate.thumbprint).cer"
             $cerData = $certificate.certificate.Getrawcertdata()
-            [System.IO.File]::WriteAllBytes($cerPath,$cerData)
+            [System.IO.File]::WriteAllBytes($cerPath, $cerData)
             $allCerts += $certificate
         }
     }
-    end{
+    end {
         $allCerts | Export-PSFClixml -Path $xmlPath -Depth 5
     }
 }

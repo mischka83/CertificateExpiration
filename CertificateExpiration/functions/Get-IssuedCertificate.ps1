@@ -1,4 +1,4 @@
-function Get-CEIssuedCertificate {
+﻿function Get-CEIssuedCertificate {
     <#
     .SYNOPSIS
         Lists issued certificates.
@@ -25,6 +25,7 @@ function Get-CEIssuedCertificate {
     .EXAMPLE
         PS C:\> Get-CEIssuedCertificate -FQCAName "ca.contoso.com\MS-CA-01"
 #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingEmptyCatchBlock', '')]
     [CmdletBinding()]
     param (
         [string[]]
@@ -93,8 +94,8 @@ function Get-CEIssuedCertificate {
             }
 
             $CVR_SEEK_EQ = 1
-            $CVR_SEEK_LT = 2
-            $CVR_SEEK_GT = 16
+            # $CVR_SEEK_LT = 2
+            # $CVR_SEEK_GT = 16
 
             # 20 - issued certificates
             $caView.SetRestriction($caView.GetColumnIndex($false, 'Request Disposition'), $CVR_SEEK_EQ, 0, 20)
