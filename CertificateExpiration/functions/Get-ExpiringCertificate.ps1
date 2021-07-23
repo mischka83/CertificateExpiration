@@ -15,7 +15,7 @@
     .EXAMPLE
         PS C:\$expiringCertificates = $allCertificates | Get-ExpiringCertificate -ExpireDays 90
 
-        returns the expiring certificates of the next 90 days from a list of certificate objects
+        Returns the expiring certificates of the next 90 days from a list of certificate objects
 #>
     [CmdletBinding()]
     param (

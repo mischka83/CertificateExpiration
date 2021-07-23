@@ -1,5 +1,39 @@
-﻿function Invoke-CENotification
-{
+﻿function Invoke-CENotification {
+	# TODO Replace synopsis sample with correct eplanation and examples
+	<#
+	.SYNOPSIS
+	Short description
+
+	.DESCRIPTION
+	Long description
+
+	.PARAMETER ExpireDays
+	Parameter description
+
+	.PARAMETER PKIAdmins
+	Parameter description
+
+	.PARAMETER ExportPath
+	Parameter description
+
+	.PARAMETER NoContactMail
+	Parameter description
+
+	.PARAMETER PassThru
+	Parameter description
+
+	.PARAMETER SenderAddress
+	Parameter description
+
+	.PARAMETER FilterTemplateName
+	Parameter description
+
+	.EXAMPLE
+	An example
+
+	.NOTES
+	General notes
+#>
 	[CmdletBinding()]
 	param (
 		[Int]

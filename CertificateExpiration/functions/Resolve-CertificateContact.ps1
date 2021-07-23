@@ -1,4 +1,21 @@
 ﻿function Resolve-CertificateContact {
+    # TODO Replace synopsis sample with correct eplanation and examples
+    <#
+    .SYNOPSIS
+    Short description
+
+    .DESCRIPTION
+    Long description
+
+    .PARAMETER Certificate
+    Parameter description
+
+    .EXAMPLE
+    An example
+
+    .NOTES
+    General notes
+#>
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingEmptyCatchBlock', '')]
     [CmdletBinding()]
     param (

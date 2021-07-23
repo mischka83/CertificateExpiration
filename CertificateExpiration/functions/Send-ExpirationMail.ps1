@@ -1,4 +1,35 @@
 ﻿function Send-ExpirationMail {
+    # TODO Replace synopsis sample with correct eplanation and examples
+    <#
+    .SYNOPSIS
+
+    .DESCRIPTION
+    Long description
+
+    .PARAMETER Certificates
+    Parameter description
+
+    .PARAMETER Recipient
+    Parameter description
+
+    .PARAMETER SenderAddress
+    Parameter description
+
+    .PARAMETER Contact
+    Parameter description
+
+    .PARAMETER ExpireDays
+    Parameter description
+
+    .PARAMETER CertificateTemplates
+    Parameter description
+
+    .EXAMPLE
+    An example
+
+    .NOTES
+    General notes
+#>
     [CmdletBinding()]
     param (
         $Certificates,
