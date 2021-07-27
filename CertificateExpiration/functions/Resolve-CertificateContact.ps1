@@ -1,17 +1,20 @@
 ﻿function Resolve-CertificateContact {
-    # TODO Replace synopsis sample with correct eplanation and examples
     <#
     .SYNOPSIS
-    Short description
+        Adds a "Contact" field to the list of certificates
 
     .DESCRIPTION
-    Long description
+        The function tries to read the e-mail address from the certificate or
+        to resolve the e-mail address from the requestername in the Active Directory
+        and adds a "Contact" field to the list of certificates.
 
     .PARAMETER Certificate
-    Parameter description
+        a list with one or more certificate objects
 
     .EXAMPLE
-    An example
+        PS C:\>$allCertificates = Get-CEIssuedCertificate -ComputerName (Get-CertificateAuthority) -FilterTemplateName $FilterTemplateName | Resolve-CertificateContact
+
+        Returns the expiring certificates of the next 90 days from a list of certificate objects including the mail address (if available)
 
     .NOTES
     General notes

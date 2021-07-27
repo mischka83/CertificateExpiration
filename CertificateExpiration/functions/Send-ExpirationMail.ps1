@@ -1,34 +1,38 @@
 ﻿function Send-ExpirationMail {
-    # TODO Replace synopsis sample with correct eplanation and examples
     <#
     .SYNOPSIS
+        Sends a mail of the certificate(s) expiring in the specified period
 
     .DESCRIPTION
-    Long description
+        Sends a mail of the certificate(s) expiring in the specified period
+        to the specified contact from the certficate or as report to an admin with a given sender address,
+        filtered by specified templates
 
     .PARAMETER Certificates
-    Parameter description
+        A list with one or more certificate objects
 
     .PARAMETER Recipient
-    Parameter description
+        Specifies the e-mail recipient address
 
     .PARAMETER SenderAddress
-    Parameter description
+        specifies the e-mail address with which the e-mail(s) will be sent
 
     .PARAMETER Contact
-    Parameter description
+        A switch to decide if an e-mail should be sent to the contact from the given certificate.
 
     .PARAMETER ExpireDays
-    Parameter description
+        Defines the scope of the search in days in which the next certificates expire
 
     .PARAMETER CertificateTemplates
-    Parameter description
+        A list of certificate templates to be filtered for
 
     .EXAMPLE
-    An example
+        PS C:\Send-ExpirationMail -Certificates <Certficate> -Contact -SenderAddress <SenderAddress> -ExpireDays <ExpireDays> -CertificateTemplates <TemplateFilter>
 
-    .NOTES
-    General notes
+        sends a mail of the certificate(s) <Certificate> expiring in the specified period <ExpireDays>
+        to the specified contact from the certficate with the sender address <SenderAddress>,
+        filtered by specified templates <TemplateFilter>
+
 #>
     [CmdletBinding()]
     param (
