@@ -32,6 +32,8 @@
 	.EXAMPLE
 		PS C:\Invoke-CENotification -ExpireDays <ExpireDays> -PKIAdmins <recipient@domain.de> -ExportPath <LocalPath> -NoContactMail -SenderAddress <Sender@domain.de> -FilterTemplateName <CertificateTemplate>,<CertificateTemplate>
 
+		Sends a mail report about the expiring certificates to the pki-admins with the given sender address and exports the report as csv and xml and the certificates themselves to the export path
+
 #>
 	[CmdletBinding()]
 	param (
@@ -78,9 +80,5 @@
 
 		if ($ExportPath) { $expiringCertificates | Export-CertificateReport -Path $ExportPath }
 		if ($PassThru) { $expiringCertificates }
-	}
-	end
-	{
-
 	}
 }
