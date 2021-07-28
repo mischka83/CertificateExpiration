@@ -15,7 +15,7 @@
         Specifies the e-mail recipient address
 
     .PARAMETER SenderAddress
-        specifies the e-mail address with which the e-mail(s) will be sent
+        Specifies the e-mail address with which the e-mail(s) will be sent
 
     .PARAMETER Contact
         A switch to decide if an e-mail should be sent to the contact from the given certificate.

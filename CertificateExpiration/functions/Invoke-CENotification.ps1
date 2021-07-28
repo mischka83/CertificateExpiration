@@ -1,38 +1,37 @@
 ﻿function Invoke-CENotification {
-	# TODO Replace synopsis sample with correct eplanation and examples
 	<#
 	.SYNOPSIS
-	Short description
+		Invoke-CENotification gives you a summary of the expiring certificates as mailreport, as file export and/or passthru to the console.
+		You can also spcifie if a mail to the certificate contact or requester will be sent
 
 	.DESCRIPTION
-	Long description
+		Invoke-CENotification gives you a summary of the expiring certificates as mailreport, as file export and/or passthru to the console.
+		You can also spcifie if a mail to the certificate contact or requester will be sent
 
 	.PARAMETER ExpireDays
-	Parameter description
+		Defines the scope of the search in days in which the next certificates expire
 
 	.PARAMETER PKIAdmins
-	Parameter description
+		Specifies the e-mail address of the PKI-Administrator to sent the summary of the report
 
 	.PARAMETER ExportPath
-	Parameter description
+		Specifies the path to Export the expiring certificate(s) and report files
 
 	.PARAMETER NoContactMail
-	Parameter description
+		Defines if a seperate mail to the certificate contact or requester will be sent
 
 	.PARAMETER PassThru
-	Parameter description
+		Defines if an output should be done on the console
 
 	.PARAMETER SenderAddress
-	Parameter description
+		Specifies the e-mail address with which the e-mail(s) will be sent
 
 	.PARAMETER FilterTemplateName
-	Parameter description
+		A list of certificate templates to be filtered for
 
 	.EXAMPLE
-	An example
+		PS C:\Invoke-CENotification -ExpireDays <ExpireDays> -PKIAdmins <recipient@domain.de> -ExportPath <LocalPath> -NoContactMail -SenderAddress <Sender@domain.de> -FilterTemplateName <CertificateTemplate>,<CertificateTemplate>
 
-	.NOTES
-	General notes
 #>
 	[CmdletBinding()]
 	param (
