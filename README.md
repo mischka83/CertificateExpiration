@@ -48,6 +48,8 @@ PS C:\$expiringCertificates = Get-ExpiringCertificate -Certificate $allcertifica
 
 # Contribution
 
+Many thanks to friedrich weinmann
+
 # Author
 **Christian Sohr**
 
