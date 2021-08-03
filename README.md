@@ -1,35 +1,20 @@
 ﻿# CertificationExpiration
-# Table of
-# Requirements
-# License
-# Description
+## Table of Contents
+## Description
+    This Module gives you a summary of the expiring certificates as mailreport, as file export and/or passthru to the console.
+		You can also specify if a mail to the certificate contact or requester will be sent.
+## Requirements
+## Examples
+## Links
 
-Insert a useful description for the CertificateExpiration project here.
+- [Repo](https://github.com/mischka83/CertificateExpiration "CertificateExpiration Repo")
+## Contribution
 
-Remember, it's the first thing a visitor will see.
+## Author
 
-# Project Setup Instructions
-## Working with the layout
+**Christian Sohr**
 
-- Don't touch the psm1 file
-- Place functions you export in `functions/` (can have subfolders)
-- Place private/internal functions invisible to the user in `internal/functions` (can have subfolders)
-- Don't add code directly to the `postimport.ps1` or `preimport.ps1`.
-  Those files are designed to import other files only.
-- When adding files & folders, make sure they are covered by either `postimport.ps1` or `preimport.ps1`.
-  This adds them to both the import and the build sequence.
+- [Profile](https://github.com/mischka83 "Christian Sohr")
+- [Email](mailto:csohr@gmx.de?subject=Hi "Hi!")
 
-## Setting up CI/CD
-
-> To create a PR validation pipeline, set up tasks like this:
-
-- Install Prerequisites (PowerShell Task; VSTS-Prerequisites.ps1)
-- Validate (PowerShell Task; VSTS-Validate.ps1)
-- Publish Test Results (Publish Test Results; NUnit format; Run no matter what)
-
-> To create a build/publish pipeline, set up tasks like this:
-
-- Install Prerequisites (PowerShell Task; VSTS-Prerequisites.ps1)
-- Validate (PowerShell Task; VSTS-Validate.ps1)
-- Build (PowerShell Task; VSTS-Build.ps1)
-- Publish Test Results (Publish Test Results; NUnit format; Run no matter what)
+## License
