@@ -1,5 +1,6 @@
 # CertificationExpiration
-[TOC]
+* auto-gen TOC:
+{:toc}
 ## Description
 This Module gives you a summary of the expiring certificates as mailreport, as file export and/or passthru to the console.
 You can also specify if a mail to the certificate contact or requester will be sent.
