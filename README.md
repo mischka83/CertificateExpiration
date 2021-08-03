@@ -1,5 +1,5 @@
 # Description
-You are a certificate administrator and would like to get an overview of which certificates will expire in the near future? 
+You are a certificate administrator and would like to get an overview of which certificates will expire in the near future?
 Maybe also an automatic notification to a contact person?
 
 Then this module is exactly the right one for you.
@@ -23,6 +23,7 @@ You can also specify if a mail to the certificate contact or requester will be s
 - Admin permissions for the Certification Authority
 
 # Examples
+## Step-by-Step
 Returns the Certification Authority from the Active Directory
 ```powershell
 PS C:\Get-CertificateAuthority
@@ -31,10 +32,20 @@ Returns all certificates from CA <ComputerName>
 ```powershell
 PS C:\$allcertificate = Get-IssuedCertificate -ComputerName <ComputerName>
 ```
+Returns all certificates from all certificate authorities
+```powershell
+PS C:\$allcertificate = Get-IssuedCertificate -ComputerName (Get-CertificateAuthority)
+```
+Returns all expiring certificates of the next 90 days from the array
+```
+PS C:\$expiringCertificates = Get-ExpiringCertificate -Certificate $allcertificate -ExpireDays 90
+```
+## All-In-One
+
 # Links
 
 - [Repo](https://github.com/mischka83/CertificateExpiration) "CertificateExpiration"
-  
+
 # Contribution
 
 # Author
@@ -42,7 +53,7 @@ PS C:\$allcertificate = Get-IssuedCertificate -ComputerName <ComputerName>
 
 - [Profile](https://github.com/mischka83 "Christian Sohr")
 - [Email](mailto:csohr@gmx.de?subject=Hi "Hi!")
-  
+
 # Project Status
 ##0.1.0 (2021-08-21)
 Alpha Release. It "Should" do the job and do it well enough.

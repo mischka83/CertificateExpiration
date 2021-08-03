@@ -17,7 +17,7 @@ jobs:
       run: .\build\vsts-validate.ps1
       shell: powershell
     - name: Build
-      run: .\build\vsts-build.ps1 -ApiKey $env:APIKEY
+      run: .\build\vsts-build.ps1 -ApiKey $env:PSGALLERY
       shell: powershell
       env:
-        APIKEY: ${{ secrets.ApiKey }}
+        APIKEY: ${{ secrets.PSGALLERY }}
