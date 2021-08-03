@@ -42,11 +42,12 @@ PS C:\$allcertificate = Get-IssuedCertificate -ComputerName <ComputerName>
 
 - [Profile](https://github.com/mischka83 "Christian Sohr")
 - [Email](mailto:csohr@gmx.de?subject=Hi "Hi!")
-
-# License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  The source code for the site is licensed under the MIT license, which you can find in the LICENSE.txt file.
-
+  
 # Project Status
 ##0.1.0 (2021-08-21)
 Alpha Release. It "Should" do the job and do it well enough.
+
+# License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+The source code for the site is licensed under the MIT license, which you can find in the LICENSE.txt file.
+
