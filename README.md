@@ -45,3 +45,4 @@ PS C:\$allcertificate = Get-IssuedCertificate -ComputerName <ComputerName>
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  The source code for the site is licensed under the MIT license, which you can find in the LICENSE.txt file.
