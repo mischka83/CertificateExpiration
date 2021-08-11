@@ -21,6 +21,7 @@ You can also specify if a mail to the certificate contact or requester will be s
 # Requirements
 - Read permission in the Active Directory
 - Admin permissions for the Certification Authority
+- Installed ActiveDirectory Powershell-Module
 
 # Examples
 ## Step-by-Step
