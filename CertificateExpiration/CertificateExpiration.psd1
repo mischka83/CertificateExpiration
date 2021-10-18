@@ -27,6 +27,7 @@
 	# this module
 	RequiredModules   = @(
 		@{ ModuleName = 'PSFramework'; ModuleVersion = '1.6.205' }
+		"JEAnalyzer"
 		"MailDaemon"
 		"Principal"
 		"String"
@@ -46,7 +47,8 @@
 		'Export-CertificateReport'
 		'Get-CertificateAuthority'
 		'Get-ExpiringCertificate'
-		'Get-IssuedCertificate'
+		'Get-CEIssuedCertificate'
+		'Install-CEJeaEndpoint'
 		'Invoke-CENotification'
 		'Resolve-CertificateContact'
 		'Send-ExpirationMail'

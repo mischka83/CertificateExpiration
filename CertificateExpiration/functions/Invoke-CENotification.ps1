@@ -58,7 +58,13 @@
 
 		[PSFArgumentCompleter("CertificateExpiration.TemplateDisplayName")]
 		[string[]]
-		$FilterTemplateName
+		$FilterTemplateName,
+
+		[switch]
+		$UseJea,
+
+		[pscredential]
+        $Credential
 	)
 
 
@@ -68,7 +74,9 @@
 	}
 	process
 	{
-		$allCertificates = Get-CEIssuedCertificate -ComputerName (Get-CertificateAuthority) -FilterTemplateName $FilterTemplateName | Resolve-CertificateContact
+		$parameters = $PSBoundParameters | ConvertTo-PSFHashtable -Include FilterTemplateName, UseJea, Credential
+		$allCertificates = Get-CEIssuedCertificate -ComputerName (Get-CertificateAuthority) @parameters | Resolve-CertificateContact
+
 		$expiringCertificates = $allCertificates | Get-ExpiringCertificate -ExpireDays $ExpireDays
 
 		if ($PKIAdmins) { Send-ExpirationMail -Certificates $expiringCertificates -Recipient $PKIAdmins -SenderAddress $SenderAddress -ExpireDays $ExpireDays -CertificateTemplates $FilterTemplateName }
