@@ -3,7 +3,7 @@
 	RootModule        = 'CertificateExpiration.psm1'
 
 	# Version number of this module.
-	ModuleVersion     = '1.0.0'
+	ModuleVersion     = '1.0.1'
 
 	# ID used to uniquely identify this module
 	GUID              = 'c5fe6f3d-244a-49df-8c53-dfdce2b3e196'
@@ -15,7 +15,7 @@
 	CompanyName       = ' '
 
 	# Copyright statement for this module
-	Copyright         = 'Copyright (c) 2021 Christian Sohr'
+	Copyright         = 'Copyright (c) 2022 Christian Sohr'
 
 	# Description of the functionality provided by this module
 	Description       = 'Gibt alle auslaufenden Zertifikate aus'
