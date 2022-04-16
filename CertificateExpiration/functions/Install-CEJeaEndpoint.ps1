@@ -1,4 +1,27 @@
 ﻿function Install-CEJeaEndpoint {
+    <#
+    .SYNOPSIS
+    Short description
+    
+    .DESCRIPTION
+    Long description
+    
+    .PARAMETER Identity
+    Parameter description
+    
+    .PARAMETER ComputerName
+    Parameter description
+    
+    .PARAMETER Credential
+    Parameter description
+    
+    .PARAMETER Basic
+    Parameter description
+    
+    .EXAMPLE
+    An example
+    
+    #>
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]

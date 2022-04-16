@@ -1,4 +1,29 @@
 ﻿function Get-RemoteIssuedCertificate {
+    <#
+    .SYNOPSIS
+    Internal Function to lists issued certificates.
+    
+    .DESCRIPTION
+    Internal Function to lists issued certificates.
+    
+    .PARAMETER FQCAName
+    The computername of the CA (automatically detects the CA name)
+    
+    .PARAMETER Properties
+    Properties of the Certificates
+    
+    .PARAMETER Templates
+    Available Templates from the CA
+    
+    .PARAMETER FilterTemplateName
+    Selected Templates from the CA-Templates
+    
+    .EXAMPLE
+    PS C:\> Get-RemoteIssuedCertificate
+
+    Returns all issued certificates from the remote computer (CA)
+    
+    #>
     param (
         $FQCAName,
 
