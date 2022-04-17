@@ -23,7 +23,7 @@
 	.PARAMETER Credential
 		A PSCredential object to use Credential instead of integrated Account with JEA
 
-    .PARAMETER FilterTemplate
+    .PARAMETER FilterTemplateName
         with this parameter you have the possibility to specify certain certificate templates as filters
 
     .EXAMPLE
@@ -32,7 +32,7 @@
         Returns all issued certificates from the current computer (assumes localhost is a CA)
     
     .EXAMPLE
-        PS C:\> Get-CEIssuedCertificate -FilterTemplate <CertificateTemplate>,<CertificateTemplate>
+        PS C:\> Get-CEIssuedCertificate -FilterTemplateName <CertificateTemplate>,<CertificateTemplate>
 
         Returns all filtered issued certificates from the current computer (assumes localhost is a CA)
 
