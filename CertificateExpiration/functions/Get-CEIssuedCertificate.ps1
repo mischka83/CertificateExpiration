@@ -16,17 +16,25 @@
 
     .PARAMETER Properties
         The properties to retrieve
-        
+
 	.PARAMETER UseJea
 		A boolean switch to use Just Enough Administration (JEA)
 
 	.PARAMETER Credential
 		A PSCredential object to use Credential instead of integrated Account with JEA
 
+    .PARAMETER FilterTemplate
+        with this parameter you have the possibility to specify certain certificate templates as filters
+
     .EXAMPLE
         PS C:\> Get-CEIssuedCertificate
 
         Returns all issued certificates from the current computer (assumes localhost is a CA)
+    
+    .EXAMPLE
+        PS C:\> Get-CEIssuedCertificate -FilterTemplate <CertificateTemplate>,<CertificateTemplate>
+
+        Returns all filtered issued certificates from the current computer (assumes localhost is a CA)
 
     .EXAMPLE
         PS C:\> Get-CEIssuedCertificate -FQCAName "ca.contoso.com\MS-CA-01"

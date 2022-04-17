@@ -1,25 +1,27 @@
 ﻿function Install-CEJeaEndpoint {
     <#
     .SYNOPSIS
-    Short description
+    Installed the JeaEndpoint on the remote CA
     
     .DESCRIPTION
-    Long description
+    Installed the JeaEndpoint on the remote CA
     
     .PARAMETER Identity
     Parameter description
     
     .PARAMETER ComputerName
-    Parameter description
+    The computername of the CA where the JEA endpoint will be installed
     
     .PARAMETER Credential
-    Parameter description
+    A PSCredential object to use Credential
     
     .PARAMETER Basic
-    Parameter description
+    TODO: Parameter description
     
     .EXAMPLE
-    An example
+    PS C:\Install-CEJeaEndpoint -Identity <Identity> -ComputerName <Computer> -Credential $cred -Basic:$true#
+
+    TODO: description of the Example
     
     #>
     [CmdletBinding()]

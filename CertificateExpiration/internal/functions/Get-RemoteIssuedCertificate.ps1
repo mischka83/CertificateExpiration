@@ -24,6 +24,7 @@
     Returns all issued certificates from the remote computer (CA)
     
     #>
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSAvoidUsingEmptyCatchBlock', '')]
     param (
         $FQCAName,
 
