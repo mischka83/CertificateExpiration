@@ -28,11 +28,22 @@
 
 	.PARAMETER FilterTemplateName
 		A list of certificate templates to be filtered for
+	
+	.PARAMETER UseJea
+		A boolean switch to use Just Enough Administration (JEA)
+
+	.PARAMETER Credential
+		A PSCredential object to use Credential instead of integrated Account with JEA
 
 	.EXAMPLE
 		PS C:\Invoke-CENotification -ExpireDays <ExpireDays> -PKIAdmins <recipient@domain.de> -ExportPath <LocalPath> -NoContactMail -SenderAddress <Sender@domain.de> -FilterTemplateName <CertificateTemplate>,<CertificateTemplate>
 
 		Sends a mail report about the expiring certificates to the pki-admins with the given sender address and exports the report as csv and xml and the certificates themselves to the export path
+
+	.EXAMPLE
+		PS C:\Invoke-CENotification -ExpireDays <ExpireDays> -NoContactMail -FilterTemplateName <CertificateTemplate>,<CertificateTemplate> -Credential $cred -UseJea:$false -PassThru
+
+		Returns the expiring certificates as powershell output (PassThru) under specification of the pki admin account. JEA is not used.
 
 #>
 	[CmdletBinding()]

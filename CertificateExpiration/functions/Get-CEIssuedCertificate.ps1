@@ -16,6 +16,12 @@
 
     .PARAMETER Properties
         The properties to retrieve
+        
+	.PARAMETER UseJea
+		A boolean switch to use Just Enough Administration (JEA)
+
+	.PARAMETER Credential
+		A PSCredential object to use Credential instead of integrated Account with JEA
 
     .EXAMPLE
         PS C:\> Get-CEIssuedCertificate
